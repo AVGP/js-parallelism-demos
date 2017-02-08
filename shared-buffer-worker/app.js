@@ -28,7 +28,7 @@ function runTest() {
       buffer: buffer,
       offset: offset,
       length: blockLen
-    }, [buffer])
+    })
     
     numbersToCheck -= blockLen
     offset += blockLen
