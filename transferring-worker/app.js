@@ -10,9 +10,10 @@ function runTest() {
     performance.mark('testEnd')
     performance.measure('runTest', 'testStart', 'testEnd')
     var timeTaken = performance.getEntriesByName('runTest')[0].duration
-    view.set(new Uint8Array(buffer), 0)
+    console.log(msg.data);
+    var view2 = new Uint8Array(msg.data.buffer);
     alert(`Done. Found ${msg.data.numPrimes} primes in ${timeTaken} ms`)
-    console.log(msg.data.numPrimes, view)
+    console.log(msg.data.numPrimes, view2)
   }
   worker.postMessage(buffer, [buffer])
   
